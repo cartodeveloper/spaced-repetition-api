@@ -22,7 +22,7 @@ VALUES
 INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
 VALUES
   (1, 1, 'esternocleidomastoideo', 'sternocleidomastoid', 2),
-  (2, 1, 'otorrinolaringólogo', 'otolaryngologist', 3),
+  (2, 1, 'otorrinolaringologo', 'otolaryngologist', 3),
   (3, 1, 'impermeabilizante', 'waterproof', 4),
   (4, 1, 'sonrojado', 'blushing', 5),
   (5, 1, 'raro', 'weird', 6),
