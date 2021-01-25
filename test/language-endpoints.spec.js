@@ -161,7 +161,7 @@ describe.only("Language Endpoints", function () {
       );
     });
 
-    it.skip(`responds with 400 required error when 'guess' is missing`, () => {
+    it(`responds with 400 required error when 'guess' is missing`, () => {
       const postBody = {
         randomField: "test random field",
       };
@@ -180,7 +180,7 @@ describe.only("Language Endpoints", function () {
         guess: "incorrect",
       };
 
-      it.skip(`responds with incorrect and moves head`, () => {
+      it(`responds with incorrect and moves head`, () => {
         return supertest(app)
           .post(`/api/language/guess`)
           .set("Authorization", helpers.makeAuthHeader(testUser))
