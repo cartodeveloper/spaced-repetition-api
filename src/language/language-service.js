@@ -1,3 +1,5 @@
+const LinkedList = require("./linked-list");
+
 const LanguageService = {
   getUsersLanguage(db, user_id) {
     return db
@@ -17,15 +19,17 @@ const LanguageService = {
     return db
       .from("word")
       .select(
-        "id",
+        "word.id",
         "language_id",
         "original",
         "translation",
         "next",
         "memory_value",
         "correct_count",
-        "incorrect_count"
+        "incorrect_count",
+        "language.head"
       )
+      .join("language", "language.id", "=", "word.language_id")
       .where({ language_id });
   },
   getNextWord(db, user_id) {

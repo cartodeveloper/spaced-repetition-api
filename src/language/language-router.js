@@ -123,6 +123,7 @@ languageRouter.post("/guess", jsonBodyParser, async (req, res, next) => {
     res.json(rep);
   } catch (error) {
     next(error);
+    console.log(error);
   }
 });
 
