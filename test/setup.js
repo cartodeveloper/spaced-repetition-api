@@ -5,7 +5,7 @@ process.env.JWT_EXPIRY = "3m";
 
 require("dotenv").config();
 
-process.env.DB_URL || "postgresql://carito@localhost/spaced-repetition";
+process.env.DATABASE_URL || "postgresql://carito@localhost/spaced-repetition";
 
 const { expect } = require("chai");
 const supertest = require("supertest");
