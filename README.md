@@ -1,52 +1,51 @@
-# Spaced repetition API!
+# Spaced Repetition API
 
-## Local dev setup
+![Spaced-repetition](https://github.com/cartodeveloper/spaced-repetition/blob/main/public/images/spaced-repetition-gif.gif?raw=true)
 
-If using user `dunder-mifflin`:
+![s-p](https://github.com/cartodeveloper/spaced-repetition/blob/main/public/images/sp.png?raw=true)
 
-```bash
-mv example.env .env
-createdb -U dunder-mifflin spaced-repetition
-createdb -U dunder-mifflin spaced-repetition-test
-```
+## Full Stack App to help people memorize words in Spanish.
 
-If your `dunder-mifflin` user has a password be sure to set it in `.env` for all appropriate fields. Or if using a different user, update appropriately.
+Spaced repetition is an evidence-based learning technique that is usually performed with flashcards.
 
-```bash
-npm install
-npm run migrate
-env MIGRATION_DB_NAME=spaced-repetition-test npm run migrate
-```
+The SR application assists users in learning multiple foreign languages by using this technique.
 
-And `npm test` should work at this point
+The word list is structured in the database using a linked list, with words in Spanish.
 
-## Configuring Postgres
+---
 
-For tests involving time to run properly, configure your Postgres database to run in the UTC timezone.
+## 🔗[Live Link](https://spaced-repetition.cartodeveloper.vercel.app/)
 
-1. Locate the `postgresql.conf` file for your Postgres installation.
-   1. E.g. for an OS X, Homebrew install: `/usr/local/var/postgres/postgresql.conf`
-   2. E.g. on Windows, _maybe_: `C:\Program Files\PostgreSQL\11.2\data\postgresql.conf`
-   3. E.g  on Ubuntu 18.04 probably: '/etc/postgresql/10/main/postgresql.conf'
-2. Find the `timezone` line and set it to `UTC`:
+## 🔗[Client repo](https://github.com/cartodeveloper/spaced-repetition)
 
-```conf
-# - Locale and Formatting -
+---
 
-datestyle = 'iso, mdy'
-#intervalstyle = 'postgres'
-timezone = 'UTC'
-#timezone_abbreviations = 'Default'     # Select the set of available time zone
-```
+## 💻 Tech Stack
 
-## Scripts
+- ### Front-End :
+  - React
+  - React Router
+  - CSS
+  - Cypress.io
+  - Jsx
+- ### Back-end:
+  - Node.
+  - Express.
+  - JWT.
+  - Mocha&Chai.
+  - Nodemon.
+  - Supertest.
+  - postgreSQL.
 
-Start the application `npm start`
+---
 
-Start nodemon for the application `npm run dev`
+## 📑API Documentation
 
-Run the tests mode `npm test`
-
-Run the migrations up `npm run migrate`
-
-Run the migrations down `npm run migrate -- 0`
+| Method |        Path         |                                 Purpose |
+| :----- | :-----------------: | --------------------------------------: |
+| POST   |      /api/user      |                       User registration |
+| POST   |      /api/auth      |               Manage user authorization |
+| POST   |   /api/auth/toker   |           Validates username & password |
+| GET    |    /api/language    | Get all the words the user is learning. |
+| GET    | /api/language/head  |                      Get users guesses. |
+| POST   | /api/language/guess |                  Records users guesses. |
